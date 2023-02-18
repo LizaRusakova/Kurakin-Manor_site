@@ -18,7 +18,7 @@ schema = {
     'email': {
         'type': 'string',
         'minlength': 1,
-        'maxlength': 20,
+        'maxlength': 30,
         'required': True,
     },
     'mobile': {
@@ -30,37 +30,37 @@ schema = {
     'age': {
         'type': 'string',
         'minlength': 1,
-        'maxlength': 20,
+        'maxlength': 50,
         'required': True,
     },
     'occupation': {
         'type': 'string',
         'minlength': 1,
-        'maxlength': 20,
+        'maxlength': 100,
         'required': True,
     },
     'major': {
         'type': 'string',
         'minlength': 1,
-        'maxlength': 20,
+        'maxlength': 100,
         'required': True,
     },
     'pros': {
         'type': 'string',
         'minlength': 1,
-        'maxlength': 20,
+        'maxlength': 100,
         'required': True,
     },
     'cons': {
         'type': 'string',
         'minlength': 1,
-        'maxlength': 20,
+        'maxlength': 100,
         'required': True,
     },
     'suggestions': {
         'type': 'string',
         'minlength': 1,
-        'maxlength': 20,
+        'maxlength': 100,
         'required': True,
     },
 }
