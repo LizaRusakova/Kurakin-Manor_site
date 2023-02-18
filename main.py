@@ -1,8 +1,7 @@
 from flask import Flask,send_file,render_template, request
-import requests
 import os
 
-REST_URL = os.environ.get("REST_URL", "http://localhost/")
+REST_URL = os.environ.get("REST_URL", "http://localhost/feedback")
 
 app = Flask(__name__)
 
@@ -14,6 +13,10 @@ def about():
 @app.route("/workshop")
 def project_materials():
     return render_template("workshop.html.j2")
+
+@app.route("/photo")
+def photo():
+    return render_template("photo.html.j2")    
 
 #@app.route("/feedback")
 #def feedback():
@@ -32,18 +35,11 @@ def download_file_2():
 @app.route("/feedback", methods=["GET", "POST"])   
 def people():
     if request.method == 'POST':
-        name = request.values.get("name")
-        email = request.values.get("email")
-        mobile = request.values.get("mobile")
-        age = request.values.get("age")
-        occupation = request.values.get("occupation")
-        major = request.values.get("major")
-        pros = request.values.get("pros")
-        cons = request.values.get("cons")
-        suggestions = request.values.get("sugestions")
-        requests.post(REST_URL, json={"name": name, "email": email, "mobile": mobile, "age": age, "occupation": occupation, "major": major, "pros": pros, "cons": cons, "suggestions": suggestions})
+        lastname = request.values.get("lastname")
+        suggestions = request.values.get("suggestions")
+    requests.post(REST_URL, json={"lastname": lastname, "suggestions": suggestions})
     result = requests.get(REST_URL).json()
-    return render_template("feedback.html.j2", result=result) 
+    return render_template("feedback_2.html.j2", result=result) 
 
 if __name__ == "__main__":
     app.run(debug=True, host="0.0.0.0")

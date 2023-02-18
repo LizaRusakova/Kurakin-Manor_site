@@ -8,7 +8,7 @@ WORKDIR /app
 
 COPY requirements-rest.txt /app/requirements.txt
 RUN pip3 install -r requirements.txt
-COPY main.py /app/main.py
+COPY rest.py /app/rest.py
 
 CMD ["python3", "rest.py"]
 
