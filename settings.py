@@ -70,34 +70,18 @@ feedback = {
     'resource_methods': ['GET', 'POST'],
     'schema': schema
 }
-
-
-
-schema_4 = {
-    'lastname': {
-        'type': 'string',
-        'minlength': 1,
-        'maxlength': 100,
-    },
-    'suggestions': {
-        'type': 'string',
-        'minlength': 1,
-        'maxlength': 100,
-        'required': True,
-    }
-}    
   
 
 people = {
     'item_title': 'person',
     'additional_lookup': {
         'url': 'regex("[\w]+")',
-        'field': 'lastname'
+        'field': 'name'
     },
     'cache_control': 'max-age=10,must-revalidate',
     'cache_expires': 10,
     'resource_methods': ['GET', 'POST'],
-    'schema': schema_4
+    'schema': schema
 }
 
 DOMAIN = {
